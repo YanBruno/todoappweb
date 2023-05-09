@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { CreateUser } from '../../models/create.user.model';
 import { IGenericCommandResult } from 'src/app/core/models/generic-command-result.model';
-import { Security } from 'src/app/core/utils/Security';
+import { Security } from 'src/app/core/utils/security.itul';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'src/app/core/services/message.service';

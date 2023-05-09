@@ -19,8 +19,9 @@ export class Security {
 
     public static getUser(): User | null {
         const data = localStorage.getItem('todouser');
+
         if (data) {
-            return JSON.parse(data);
+            return JSON.parse(data) as User;
         } else {
             return null;
         }

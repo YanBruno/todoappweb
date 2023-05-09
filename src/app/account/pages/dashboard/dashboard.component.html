@@ -1,1 +1,49 @@
-<p>account works!</p>
+<div class="container">
+    <div *ngIf="user" class="columns is-centered mt-6">
+        <div class="column is-6">
+            <h1 class="title">{{user.name.firstName}} {{user.name.lastName}}</h1>
+            <form class="box">
+
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="Email" value="{{user.email.address}}">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Data de inscrição</label>
+                    <div class="control">
+                        <input class="input" type="datetime" placeholder="Email"
+                            value="{{user.createdAt | date: 'short'}}">
+                    </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-right">
+                    <div class="control">
+                        <div *ngIf="user.active" class="icon-text">
+                            <span class="icon has-text-success">
+                                <i class="fas fa-check-square"></i>
+                            </span>
+                            <span>Conta ativa</span>
+                        </div>
+
+                        <div *ngIf="!user.active" class="icon-text has-text-danger">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                            <span>Conta inativa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-right">
+                    <div class="control">
+                        <button class="button is-danger is-outlined is-small">Excluir conta</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
