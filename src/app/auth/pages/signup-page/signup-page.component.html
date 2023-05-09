@@ -33,9 +33,10 @@
                 </div>
             </div>
 
-            <!-- [disabled]="form.invalid" -->
 
-            <button [ngClass]="{'is-loading' : (busy)}" class="button is-primary is-fullwidth" (click)="submit()">Criar
+
+            <button [ngClass]="{'is-loading' : (busy)}" class="button is-primary is-fullwidth" [disabled]="form.invalid"
+                (click)="submit()">Criar
                 conta</button>
 
             <button class="button is-primary is-light is-fullwidth mt-3" (click)="goBack()">Voltar</button>

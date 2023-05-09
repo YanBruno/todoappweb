@@ -6,9 +6,10 @@ import { BehaviorSubject, Observable, first } from 'rxjs';
 import { IGenericCommandResult } from 'src/app/core/models/generic-command-result.model';
 import { User } from 'src/app/core/models/user.model';
 import { CreateUser } from '../models/create.user.model';
-import { Security } from 'src/app/core/utils/Security';
+import { Security } from 'src/app/core/utils/security.itul';
 import { Router } from '@angular/router';
 import { MessageService } from 'src/app/core/services/message.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private userService: UserService
   ) { }
 
   signUp(user: CreateUser): Observable<IGenericCommandResult> {
@@ -53,7 +55,10 @@ export class AuthService {
 
   handlerLogin(result: IGenericCommandResult) {
     if (result.success) {
-      Security.set(result.data.user as User, result.data.token);
+
+      const user = result.data.user as User;
+      Security.set(user, result.data.token);
+
       this.updateLoggedIn();
 
       this.messageService.clearNotifications();
@@ -61,7 +66,6 @@ export class AuthService {
     }
 
     if (!result.success) {
-      console.log(result)
       this.messageService.addMessageFromResult(result);
     }
   }

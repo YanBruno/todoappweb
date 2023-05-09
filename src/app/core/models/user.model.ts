@@ -1,16 +1,16 @@
 export interface User {
-    id: string
-    Name: Name
-    Email: Email
-    active: boolean
-    createdAt: Date
+    id: string;
+    name: Name;
+    email: Email;
+    active: boolean;
+    createdAt: Date;
 }
 
-interface Name {
-    fisrtname: string,
-    lastname: string
+export interface Name {
+    firstName: string;
+    lastName: string;
 }
 
-interface Email {
-    address: string
+export interface Email {
+    address: string;
 }

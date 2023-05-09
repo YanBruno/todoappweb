@@ -15,10 +15,8 @@ export class MessageService {
   addMessageFromResult(result: IGenericCommandResult) {
 
     const m = { title: result.message, notifications: result.data } as Message
-    console.log(m);
     this.message.next(m);
   }
-
 
   addMessage(message: Message) {
     this.message.next(message);
