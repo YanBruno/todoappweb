@@ -1,0 +1,9 @@
+<article *ngIf="message" class="message is-danger">
+    <div class="message-header">
+        <p>{{message.title}}</p>
+        <button (click)="onClear()" class="delete" aria-label="delete"></button>
+    </div>
+    <div *ngFor="let notification of message.notifications" class="message-body">
+        {{notification.message}}
+    </div>
+</article>
