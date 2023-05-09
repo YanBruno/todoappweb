@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    base_url: 'api/v1'
+    base_url: 'https://todoapp-qa.azurewebsites.net/api'
 };

@@ -27,13 +27,13 @@ export class AuthService {
   ) { }
 
   signUp(user: CreateUser): Observable<IGenericCommandResult> {
-    return this.http.post<IGenericCommandResult>(`${this.baseUrl}/User`, user).pipe(first());
+    return this.http.post<IGenericCommandResult>(`${this.baseUrl}/v1/User`, user).pipe(first());
   }
 
   login(user: ICredential): Observable<IGenericCommandResult> {
     return this
       .http
-      .post<IGenericCommandResult>(`${this.baseUrl}/login`, user)
+      .post<IGenericCommandResult>(`${this.baseUrl}/v1/login`, user)
       .pipe(
         first()
       );
