@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
-import { SignupPageComponent } from './pages/signup-page/signup-page.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const MODULES = [
   AuthRoutingModule,
@@ -14,8 +14,9 @@ const MODULES = [
 
 @NgModule({
   declarations: [
-    SignupPageComponent,
-    LoginPageComponent
+    LoginFormComponent,
+    SignupFormComponent,
+    MainPageComponent,
   ],
   imports: [
     CommonModule,

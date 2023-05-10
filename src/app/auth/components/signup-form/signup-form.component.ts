@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/core/models/user.model';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
-import { CreateUser } from '../../models/create.user.model';
-import { IGenericCommandResult } from 'src/app/core/models/generic-command-result.model';
-import { Security } from 'src/app/core/utils/security.itul';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
-import { MessageService } from 'src/app/core/services/message.service';
-import { Message } from 'src/app/core/models/message.model';
+import { CreateUser } from '../../models/create.user.model';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.css']
+  selector: 'app-signup-form',
+  templateUrl: './signup-form.component.html',
+  styleUrls: ['./signup-form.component.css']
 })
-export class SignupPageComponent {
+export class SignupFormComponent {
+
 
   busy = false;
 
