@@ -9,7 +9,6 @@ import { CreateUser } from '../models/create.user.model';
 import { Security } from 'src/app/core/utils/security.itul';
 import { Router } from '@angular/router';
 import { MessageService } from 'src/app/core/services/message.service';
-import { UserService } from 'src/app/core/services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,6 @@ export class AuthService {
     private http: HttpClient,
     private router: Router,
     private messageService: MessageService,
-    private userService: UserService
   ) { }
 
   signUp(user: CreateUser): Observable<IGenericCommandResult> {

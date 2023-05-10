@@ -1,0 +1,7 @@
+<nav class="level">
+    <p class="level-item has-text-centered title">
+        {{listItem?.title?.value}}
+    </p>
+
+</nav>
+<app-todo-item (onDeleteTodoItem)="deleteTodoItem($event)" *ngFor="let todo of listItem?.todos" [todoItem]="todo" />

@@ -1,0 +1,23 @@
+<div class="card mb-3">
+    <header class="card-header">
+        <p class="card-header-title">
+            {{todoItem.title.value}}
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            {{todoItem.description.value}}
+            <br>
+            {{todoItem.createdAt | date}}
+        </div>
+    </div>
+
+    <footer class="card-footer">
+        <span class="card-footer-item">
+            <button (click)="onEdit()" [ngClass]="{'is-loading' : (busy)}" class="button is-success">Edit</button>
+        </span>
+        <span class="card-footer-item">
+            <button (click)="onDelete()" [ngClass]="{'is-loading' : (busy)}" class="button is-danger">Delete</button>
+        </span>
+    </footer>
+</div>

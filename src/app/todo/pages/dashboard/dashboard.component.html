@@ -1,1 +1,44 @@
-<p>todo works!</p>
+<div class="columns is-centered ">
+    <div class="column is-7">
+
+        <section *ngIf="busy" class="section">
+            <progress class="progress is-small is-primary" max="100">50%</progress>
+        </section>
+
+        <section *ngIf="!busy" class="section">
+
+            <nav class="level mb-6">
+                <div class="level-left">
+
+                    <div class="level-item">
+                        <div [ngClass]="{'is-active' : (isShowList)}" class="dropdown" (click)="showLists()">
+                            <div class="dropdown-trigger">
+                                <button class="button " aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span>Listas</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a *ngFor="let list of lists" (click)="selectList(list)" class="dropdown-item">
+                                        {{list.title.value}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <p class="level-item"><a class="button is-danger">Excluir Lista</a></p>
+                    <p class="level-item"><a class="button is-success">Nova Lista</a></p>
+                </div>
+
+            </nav>
+
+            <app-todo-list [listItem]="selectedList" />
+
+        </section>
+    </div>
+</div>
