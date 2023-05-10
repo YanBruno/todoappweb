@@ -1,0 +1,22 @@
+<h2 class="subtitle is-3 mt-1">Login</h2>
+<form [formGroup]="form" class="box">
+
+    <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+            <input formControlName="username" class="input" type="email" placeholder="e.g.alex@example.com">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+            <input formControlName="password" class="input" type="password" placeholder="********">
+        </div>
+    </div>
+
+    <button class="button is-primary is-fullwidth" [ngClass]="{'is-loading' : (busy)}" (click)="submit()"
+        [disabled]="form.invalid">Login</button>
+    <button class=" button is-primary is-light is-fullwidth mt-3" [routerLink]="['/signup']">Criar
+        conta</button>
+</form>

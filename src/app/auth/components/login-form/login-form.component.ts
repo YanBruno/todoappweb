@@ -3,13 +3,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ICredential } from '../../models/credential.model';
 
-
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
 })
-export class LoginPageComponent {
+export class LoginFormComponent {
 
   busy = false;
 
@@ -26,10 +25,11 @@ export class LoginPageComponent {
     ])]
   });
 
-  constructor(
-    private fb: FormBuilder
-    , private service: AuthService
-  ) { }
+  constructor(private fb: FormBuilder
+    , private service: AuthService) {
+
+
+  }
 
   submit() {
     this.busy = true;
@@ -47,5 +47,4 @@ export class LoginPageComponent {
         complete: () => { this.busy = false; }
       })
   }
-
 }

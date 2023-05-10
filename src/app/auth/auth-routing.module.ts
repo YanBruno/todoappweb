@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginPageComponent },
-  { path: 'signup', component: SignupPageComponent }
+  {
+    path: ''
+    , component: MainPageComponent
+    , children: [
+      { path: 'login', component: LoginFormComponent }
+      , { path: 'signup', component: SignupFormComponent }
+    ]
+  }
 ];
 
 @NgModule({

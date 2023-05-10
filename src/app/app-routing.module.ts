@@ -9,8 +9,8 @@ const routes: Routes = [
 
   { path: "", loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule) },
 
-  { path: "todos", canActivate: [authGuard], component: MainPageComponent, loadChildren: () => import('./todo/todo.module').then((m) => m.TodoModule) },
-  { path: "account", canActivate: [authGuard], component: MainPageComponent, loadChildren: () => import('./account/account.module').then((m) => m.AccountModule) },
+  { path: "todos", canMatch: [authGuard], component: MainPageComponent, loadChildren: () => import('./todo/todo.module').then((m) => m.TodoModule) },
+  { path: "account", canMatch: [authGuard], component: MainPageComponent, loadChildren: () => import('./account/account.module').then((m) => m.AccountModule) },
   { path: "**", component: NotfoundPageComponent }
 ];
 
