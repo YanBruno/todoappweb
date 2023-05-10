@@ -1,45 +1,49 @@
-<div class="columns is-centered">
-    <div class="column is-two-fifths mt-6">
+<div class="columns is-centered ">
+    <div class="column is-5">
 
-        <h1 class="title is-1 has-text-centered">TodoApp</h1>
+        <section class="section">
+            <h1 class="title is-1 has-text-centered">TodoApp</h1>
 
-        <h2 class="subtitle is-3 mt-1">Inscreva-se</h2>
-        <form [formGroup]="form" class="box">
+            <h2 class="subtitle is-3 mt-1">Inscreva-se</h2>
 
-            <div class="field">
-                <label class="label">Nome</label>
+            <form [formGroup]="form" class="box">
 
-                <div class="field is-grouped">
-                    <div class="control is-expanded">
-                        <input formControlName="firstname" class="input " type="text" placeholder="Nome">
+                <div class="field">
+                    <label class="label">Nome</label>
+
+                    <div class="field is-grouped">
+                        <div class="control is-expanded">
+                            <input formControlName="firstname" class="input " type="text" placeholder="Nome">
+                        </div>
+                        <div class="control is-expanded">
+                            <input formControlName="lastname" class="input " type="text" placeholder="Sobrenome">
+                        </div>
                     </div>
-                    <div class="control is-expanded">
-                        <input formControlName="lastname" class="input " type="text" placeholder="Sobrenome">
+                </div>
+
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input formControlName="emailAddress" class="input" type="email"
+                            placeholder="e.g.alex@example.com">
                     </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                    <input formControlName="emailAddress" class="input" type="email" placeholder="e.g.alex@example.com">
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input formControlName="password" class="input" type="password" placeholder="********">
+                    </div>
                 </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                    <input formControlName="password" class="input" type="password" placeholder="********">
-                </div>
-            </div>
 
 
 
-            <button [ngClass]="{'is-loading' : (busy)}" class="button is-primary is-fullwidth" [disabled]="form.invalid"
-                (click)="submit()">Criar
-                conta</button>
+                <button [ngClass]="{'is-loading' : (busy)}" class="button is-primary is-fullwidth"
+                    [disabled]="form.invalid" (click)="submit()">Criar
+                    conta</button>
 
-            <button class="button is-primary is-light is-fullwidth mt-3" (click)="goBack()">Voltar</button>
-        </form>
+                <button class="button is-primary is-light is-fullwidth mt-3" (click)="goBack()">Voltar</button>
+            </form>
+        </section>
     </div>
 </div>

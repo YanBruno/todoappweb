@@ -1,9 +1,8 @@
-<div class="container">
-    <div *ngIf="user" class="columns is-centered mt-6">
-        <div class="column is-6">
+<div *ngIf="user" class="columns is-centered">
+    <div class="column is-half">
+        <section class="section">
             <h1 class="title">{{user.name.firstName}} {{user.name.lastName}}</h1>
             <form class="box">
-
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
@@ -44,6 +43,7 @@
                 </div>
 
             </form>
-        </div>
+
+        </section>
     </div>
 </div>
