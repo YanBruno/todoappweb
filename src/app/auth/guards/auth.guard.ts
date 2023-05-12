@@ -14,7 +14,8 @@ export const authGuard = () => {
     .isLoggedIn
     .pipe(
       tap(value => {
-        !value ? router.navigate(['/login']) : true;
+        if (!value)
+          router.navigate(['/login']);
       }),
       first()
     )
