@@ -28,7 +28,6 @@ export class LoginFormComponent {
   constructor(private fb: FormBuilder
     , private service: AuthService) {
 
-
   }
 
   submit() {
